@@ -1,10 +1,22 @@
 # Group 9C Capstone
 
-<a href="https://github.com/squaluz/Group-9C-Capstone/blob/main/Sem-Eval%202010%20Task8.ipynb">Main Code</a>
-Contains Python code for modelling cause-effect
+This project is our group's initial foray into the world of Natural Language Processing and Machine Learning. We worked on this as part of the NUS SGUS Fintech Program's Capstone Project. In this repository, we are mainly focusing on delivering two things:
+1. Being able to classify statements into different "types" of statements.
+2. Being able to extract temporal information from text.
 
 <a href="https://github.com/squaluz/Group-9C-Capstone/blob/main/semeval2010task8_train.txt">Train Data File</a>
 Data for training the model
 
 <a href="https://github.com/squaluz/Group-9C-Capstone/blob/main/semeval2010task8_test.txt">Test Data File</a>
 Data for testing the model
+
+
+In file "1 SemEval10 Multiclassification", you will find a code write in python and run on google colab to evaluate several models that can be used for text classification. In the training and test data, we have 10 "types" of statements, including cause-effect, product-producer, instrument-agency etc. We have evaluated 4 different models for doing text classification: Multinomial Naive Bayes, Multinomial Naive Bayes w optimized parameters, Support Vector Machine and Support Vector Machine w Linear Kernel (optimized). The last model returned the greatest accuracy.
+
+After we had showcased file 1 to our stakeholders, we gathered some feedback on how to better the code. In file "2 SemEval10 Binary Classification", we implemented some of these improvements, including changing the classification to a binary one "cause-effect" vs "others". What we noticed is that this change had resulted in skewed train/test data, with many statements in "others". Following from this, some normalization of the data could be carried out to improve this code. However, as we were asked to explore temporal information extraction as the next phase of the project, we had then moved on to that.
+
+In file "3 SVM Binary Classification with Temporal Extraction", we had utilized the model with the best accuracy  - Support Vector Machine with Linear Kernel - to conduct a binary classification to identify "cause-effect" statements. The code then uses spacy with a roberta transformer to extract temporal information. This performed much better than spacy without the transformer - better in the sense it could pick out dates in any form eg. "04.10.2022" and also relevant time period information like "Q2" which normal spacy could not do.
+
+
+
+
